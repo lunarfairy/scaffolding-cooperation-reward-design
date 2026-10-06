@@ -1,5 +1,7 @@
 # Scaffolding cooperation: reward design
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23197614.svg)](https://doi.org/10.5281/zenodo.23197614)
+
 Core experiment code for **Reward choice shapes how AI social planners treat free-riders in simulated cooperation networks**.
 
 The repository contains a cooperative-network simulator, reward definitions, ES schedule optimization, graph-network PPO, common-scenario evaluation, paired statistics, mechanism checks and manuscript statistics. Four configuration lists specify 716 distinct runs: 592 ES and 124 PPO.
@@ -110,7 +112,13 @@ These statistical corrections were made after auditing the authors' revision pac
 
 ## Citation and contact
 
-Cite the manuscript title above; no publication DOI has been assigned in this release. The underlying game is described by [McKee et al., Nature Human Behaviour (2023)](https://doi.org/10.1038/s41562-023-01686-7). Questions can be raised through GitHub issues.
+The fixed [v1.0.0 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.0) is archived on [Zenodo](https://doi.org/10.5281/zenodo.23197614). Cite this software as:
+
+Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23197614
+
+The archive contains the 23 files at commit 4351cadede0286c5595a6c73e50e892f3ebb00a3. Citation metadata and this DOI link were subsequently added to the main branch; the release tag and archived code package remain fixed. This DOI identifies the core software; generated results and trained weights remain in the separate submission package.
+
+Machine-readable citation metadata is in CITATION.cff. The accompanying manuscript has no publication DOI yet. The underlying game is described by [McKee et al., Nature Human Behaviour (2023)](https://doi.org/10.1038/s41562-023-01686-7). Questions can be raised through GitHub issues.
 
 ## Licence
 

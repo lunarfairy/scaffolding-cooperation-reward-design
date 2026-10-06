@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived release."
+type: software
+title: "Scaffolding cooperation: reward design - core experiment and analysis code"
+authors:
+  - family-names: "Lu"
+    given-names: "Junhao"
+    orcid: "https://orcid.org/0009-0000-1394-7744"
+  - family-names: "Tu"
+    given-names: "Chengyi"
+    affiliation: "School of Economics and Management, Zhejiang Sci-Tech University"
+version: "v1.0.0"
+date-released: "2026-10-07"
+doi: "10.5281/zenodo.23197614"
+url: "https://doi.org/10.5281/zenodo.23197614"
+repository-code: "https://github.com/lunarfairy/scaffolding-cooperation-reward-design"
+license: "MIT"
+keywords:
+  - network cooperation
+  - reward design
+  - reinforcement learning
+  - social planners
+  - evolution strategies
+  - graph neural networks
