@@ -25,7 +25,7 @@ Generated results, trained weights, human outcome data, figures, plotting script
 ## Environment
 
 Original experiments: Python 3.11, PyTorch 2.0.1 with CUDA 11.8 and NumPy 1.26 on NVIDIA H20 GPUs.
-Small CPU checks: Python 3.12.4, PyTorch 2.9.1, NumPy 1.26.4, pandas 3.0.2 and SciPy 1.13.1 on Windows.
+CPU checks and formal marginal recomputation: Python 3.12.4, PyTorch 2.9.1, NumPy 1.26.4, pandas 3.0.2 and SciPy 1.13.1 on Windows.
 
 Create a separate environment and activate it before installing dependencies:
 
@@ -108,7 +108,7 @@ The historical baseline-only runner is omitted; use eval_all.py. Stored outputs 
 
 The tie-value calculation follows the manuscript: a 0.005 grid over 0–1.5 and 2,000 bootstrap resamples for break-even intervals. The first transition from negative to non-negative mean value is interpolated; a value already non-negative at kappa = 0 has break-even 0. Coefficient uncertainty retains its existing 0.005 grid. Same-family shortfall confidence intervals are zero; other family comparisons retain the supplied bootstrap draws.
 
-These statistical corrections were made after auditing the authors' revision package. The deposited marginal-value results used the earlier 0.01 grid and 1,000 break-even resamples, so the corresponding intervals must be regenerated with this release before claiming that those stored results use the corrected settings. Full training has not been re-run.
+These statistical corrections were made after auditing the authors' revision package. On 7 October 2026, all 36 marginal-analysis conditions were recomputed with the unchanged archived marginal.py: 20,000 games per condition, the 0.005 grid over 0-1.5 and 2,000 bootstrap resamples. The separate submission package and affected figures/text have been refreshed; these generated results are not included in this core-code repository. CPU and GPU random streams differ, so point estimates as well as intervals were reconciled. Full training has not been re-run. The fixed v1.0.0 software archive is unchanged.
 
 ## Citation and contact
 
