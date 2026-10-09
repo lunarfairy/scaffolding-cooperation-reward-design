@@ -126,7 +126,9 @@ for t_dec, seed in [(2, 31), (7, 32), (13, 33)]:
         b = (RL[1] + SE['deg'] * rng.standard_normal(), RL[2] + SE['xn'] * rng.standard_normal(),
              RL[3] + SE['xr'] * rng.standard_normal())
         rows.append(dict(t=t_dec, spec='base', draw=d, break_even=break_even(F, b, 'base'), b_deg=b[0], b_xn=b[1],
-                         b_xr=b[2], n=len(F['kC'])))
+                         b_xr=b[2], n=len(F['kC']),
+                         value_k1=float(dtot(F, 1.0, b, 'base').mean()),       # mean one-step value at kappa = 1
+                         value_k05=float(dtot(F, 0.5, b, 'base').mean())))     # and at kappa = 0.5
     for kap in [1.0, 0.75, 0.5]:
         v = dtot(F, kap).cpu().numpy()
         kD = F['kD'].cpu().numpy()

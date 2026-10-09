@@ -1,6 +1,6 @@
 # Scaffolding cooperation: reward design
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23197614.svg)](https://doi.org/10.5281/zenodo.23197614)
+[![Release](https://img.shields.io/badge/release-v1.0.1-blue)](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1)
 
 Core experiment code for **Reward choice shapes how AI social planners treat free-riders in simulated cooperation networks**.
 
@@ -25,7 +25,7 @@ Generated results, trained weights, human outcome data, figures, plotting script
 ## Environment
 
 Original experiments: Python 3.11, PyTorch 2.0.1 with CUDA 11.8 and NumPy 1.26 on NVIDIA H20 GPUs.
-CPU checks and formal marginal recomputation: Python 3.12.4, PyTorch 2.9.1, NumPy 1.26.4, pandas 3.0.2 and SciPy 1.13.1 on Windows.
+Local CPU execution checks: Python 3.12.4, PyTorch 2.9.1, NumPy 1.26.4, pandas 3.0.2 and SciPy 1.13.1 on Windows. These checks use MKL_THREADING_LAYER=SEQUENTIAL with the local MKL-backed NumPy build to avoid an OpenMP runtime conflict with PyTorch.
 
 Create a separate environment and activate it before installing dependencies:
 
@@ -106,17 +106,17 @@ Game, rewards, optimizers, configurations and seeds are preserved. Packaging fix
 
 The historical baseline-only runner is omitted; use eval_all.py. Stored outputs and figure-generation code remain in the separate submission package. This repository generates the manuscript statistics from the specified inputs; generating the formatted manuscript figures additionally requires the separate figure scripts. Deposited results and trained weights are not yet available through a public archive linked from this repository; this is a core-code release.
 
-The tie-value calculation follows the manuscript: a 0.005 grid over 0–1.5 and 2,000 bootstrap resamples for break-even intervals. The first transition from negative to non-negative mean value is interpolated; a value already non-negative at kappa = 0 has break-even 0. Coefficient uncertainty retains its existing 0.005 grid. Same-family shortfall confidence intervals are zero; other family comparisons retain the supplied bootstrap draws.
+The tie-value calculation follows the manuscript: a 0.005 grid over 0–1.5 and 2,000 bootstrap resamples for every interval. The first transition from negative to non-negative mean value is interpolated; a value already non-negative at kappa = 0 has break-even 0, and a curve with no crossing in this range has an undefined threshold. Break-even intervals use batched multinomial resampling with a separate random stream (seed 17); effect intervals use seed 7. The break_even_boot_nan column records the proportion of bootstrap samples with an undefined threshold; percentile limits use the defined samples. Coefficient uncertainty retains its existing 0.005 grid and 1,000 coefficient draws, and now reports value_k1 and value_k05 for each draw. These coefficient draws are distinct from the 2,000 bootstrap resamples. Same-family shortfall confidence intervals are zero; other family comparisons retain the supplied bootstrap draws.
 
-These statistical corrections were made after auditing the authors' revision package. On 7 October 2026, all 36 marginal-analysis conditions were recomputed with the unchanged archived marginal.py: 20,000 games per condition, the 0.005 grid over 0-1.5 and 2,000 bootstrap resamples. The separate submission package and affected figures/text have been refreshed; these generated results are not included in this core-code repository. CPU and GPU random streams differ, so point estimates as well as intervals were reconciled. Full training has not been re-run. The fixed v1.0.0 software archive is unchanged.
+Version v1.0.1 adopts marginal.py and coefprop.py from the updated authors' revision package supplied on 8 October 2026. The manuscript and separate submission package use the accompanying original-server outputs as their scientific baseline. The earlier local CPU marginal recomputation is retained as a historical check and is superseded for manuscript reporting. The simulator, rewards, policy classes, optimizers, 716 training configurations and training seeds are unchanged; full training has not been re-run. Generated results are excluded from this core-code repository. The fixed v1.0.0 software archive remains unchanged.
 
 ## Citation and contact
 
-The fixed [v1.0.0 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.0) is archived on [Zenodo](https://doi.org/10.5281/zenodo.23197614). Cite this software as:
+The latest core-code version is the fixed [v1.0.1 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1). Cite this version as:
 
-Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23197614
+Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.1) [Software]. GitHub. https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1
 
-The archive contains the 23 files at commit 4351cadede0286c5595a6c73e50e892f3ebb00a3. Citation metadata and this DOI link were subsequently added to the main branch; the release tag and archived code package remain fixed. This DOI identifies the core software; generated results and trained weights remain in the separate submission package.
+The earlier [v1.0.0 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.0) remains archived on [Zenodo](https://doi.org/10.5281/zenodo.23197614). That DOI identifies v1.0.0; a Zenodo archive for v1.0.1 is pending. Generated results and trained weights remain in the separate submission package.
 
 Machine-readable citation metadata is in CITATION.cff. The accompanying manuscript has no publication DOI yet. The underlying game is described by [McKee et al., Nature Human Behaviour (2023)](https://doi.org/10.1038/s41562-023-01686-7). Questions can be raised through GitHub issues.
 

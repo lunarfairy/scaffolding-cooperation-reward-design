@@ -9,7 +9,9 @@ One-step value: exact change in the two endpoints' round-(t+1) cooperation proba
 with and without the capital gate (cooperation is feasible only if c*k <= capital), decomposed (Shapley,
 two-factor) into the degree term (beta_1 * k) and the neighbourhood term (kappa * (beta_2 x_n + beta_3 x_r)).
 The tie only enters the logits of its two endpoints, so the group-level one-step change equals the sum.
-Break-even kappa: the defector multiplier at which the mean one-step value is zero, for the fixed state set.
+Break-even kappa: the smallest defector multiplier on a 0.005 grid over [0, 1.5] at which the mean one-step value
+turns from negative to non-negative, for the fixed state set; 95% intervals from 2,000 bootstrap resamples of ties.
+All other intervals: percentile bootstrap, 2,000 resamples of ties (= games).
 Multi-step value: two copies of each state (tie kept / removed) are simulated to the end of the game under
 the same planner with common random numbers; we report the change in the number of cooperators in round
 t+1 (a check against the analytic one-step value), in the final round, summed over rounds t+1..15, the
@@ -29,7 +31,8 @@ from envtorch import Game, RL, PHI_DEL_C, PHI_DEL_D, PHI_ADD_C, PHI_ADD_D
 dev = 'cuda' if torch.cuda.is_available() else 'cpu'
 rundir, prefix = sys.argv[1], sys.argv[2]
 N = int(sys.argv[3]) if len(sys.argv) > 3 else 20000
-KGRID = np.round(np.arange(0.0, 1.5001, 0.005), 3)
+KGRID = np.round(np.arange(0.0, 1.5001, 0.005), 3)   # break-even grid (Methods: step 0.005 on [0, 1.5])
+NB_CI = 2000                                          # bootstrap resamples for every interval (Methods)
 
 
 def net_update(g, R):
@@ -118,19 +121,32 @@ def kappa_curve(g, keep, ci, di):
     return np.stack([one_step(g, keep, ci, di, float(k))['dTot'] for k in KGRID], 1)   # (ties, grid)
 
 
-def break_even(M, rng, nb=2000):
-    """Smallest kappa with non-negative mean tie value, interpolated on KGRID."""
-    def be(m):
-        if m[0] >= 0:
-            return float(KGRID[0])
-        idx = np.flatnonzero((m[:-1] < 0) & (m[1:] >= 0))
-        if len(idx) == 0:
-            return np.nan
-        i = idx[0]
-        return KGRID[i] + (0 - m[i]) * (KGRID[i + 1] - KGRID[i]) / (m[i + 1] - m[i])
-    est = be(M.mean(0))
-    boots = [be(M[rng.integers(0, len(M), len(M))].mean(0)) for _ in range(nb)]
-    return est, np.nanpercentile(boots, 2.5), np.nanpercentile(boots, 97.5)
+def _crossing(m):
+    """Smallest kappa on KGRID at which the mean value turns from negative to non-negative (linear interpolation).
+    0 if already non-negative at kappa = 0; NaN if it never becomes non-negative on [0, 1.5]. The value is not
+    monotone in kappa (probabilities saturate), so only the first upward crossing is used."""
+    if m[0] >= 0:
+        return 0.0
+    idx = np.flatnonzero((m[:-1] < 0) & (m[1:] >= 0))
+    if len(idx) == 0:
+        return np.nan
+    i = idx[0]
+    return float(KGRID[i] + (0 - m[i]) * (KGRID[i + 1] - KGRID[i]) / (m[i + 1] - m[i]))
+
+
+def break_even(M, rng, nb=NB_CI):
+    """Point estimate and percentile bootstrap interval (resampling ties = games) of the break-even kappa.
+    Resampling is done with multinomial weights, which is equivalent to drawing ties with replacement."""
+    est = _crossing(M.mean(0))
+    n = len(M)
+    boots = np.empty(nb)
+    for b0 in range(0, nb, 250):
+        k = min(250, nb - b0)
+        W = rng.multinomial(n, np.full(n, 1.0 / n), size=k).astype(np.float64) / n     # (k, n)
+        means = W @ M                                                                   # (k, grid)
+        boots[b0:b0 + k] = [_crossing(m) for m in means]
+    lo, hi = np.nanpercentile(boots, [2.5, 97.5]) if np.isfinite(boots).any() else (np.nan, np.nan)
+    return est, float(lo), float(hi), float(np.isnan(boots).mean())
 
 
 @torch.no_grad()
@@ -158,12 +174,13 @@ def rollout(pol, g, keep, ci, di, kappa, remove, seed):
                 minc=h.d.min(-1).values)
 
 
-def ci95(x, rng, nb=2000):
+def ci95(x, rng, nb=NB_CI):
     m = [x[rng.integers(0, len(x), len(x))].mean() for _ in range(nb)]
     return float(x.mean()), float(np.percentile(m, 2.5)), float(np.percentile(m, 97.5))
 
 
-rng = np.random.default_rng(7)
+rng = np.random.default_rng(7)        # effect intervals
+rng_be = np.random.default_rng(17)    # break-even intervals (separate stream)
 PLANNERS = {'encouragement': lambda k: rdp.FixedPolicy(rdp.enc_table()).to(dev)}
 for tag in ['welfare', 'coopmean', 'e3']:
     PLANNERS['es_' + tag] = (lambda tg: (lambda k: load_table(f'table_{tg}_k{k}_s0')))(tag)
@@ -177,13 +194,13 @@ for pname, mk in PLANNERS.items():
             g, keep, ci, di = states(pol, kap, t_dec, 1000 + seed)
             o = one_step(g, keep, ci, di, kap)
             M = kappa_curve(g, keep, ci, di)
-            be, be_lo, be_hi = break_even(M, rng)
+            be, be_lo, be_hi, be_nan = break_even(M, rng_be)
             ro = {}
             outs = [rollout(pol, g, keep, ci, di, kap, rm, 5000 + seed) for rm in (False, True)]
             for k in outs[0]:
                 ro[k] = (outs[0][k] - outs[1][k]).double().cpu().numpy()
             row = dict(planner=pname, kappa=kap, t=t_dec, n_ties=len(keep), frac_games_with_cd=len(keep) / N,
-                       break_even=be, break_even_lo=be_lo, break_even_hi=be_hi,
+                       break_even=be, break_even_lo=be_lo, break_even_hi=be_hi, break_even_boot_nan=be_nan,
                        frac_pos=float((o['dTot'] > 0).mean()))
             for k in ['dC', 'dD', 'dTot', 'dC_deg', 'dC_nb', 'dD_deg', 'dD_nb', 'dTot_gated']:
                 m, lo, hi = ci95(o[k], rng)

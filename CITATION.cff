@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the archived release."
+message: "If you use this software, please cite the fixed release."
 type: software
 title: "Scaffolding cooperation: reward design - core experiment and analysis code"
 authors:
@@ -9,10 +9,9 @@ authors:
   - family-names: "Tu"
     given-names: "Chengyi"
     affiliation: "School of Economics and Management, Zhejiang Sci-Tech University"
-version: "v1.0.0"
-date-released: "2026-10-07"
-doi: "10.5281/zenodo.23197614"
-url: "https://doi.org/10.5281/zenodo.23197614"
+version: "v1.0.1"
+date-released: "2026-10-09"
+url: "https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1"
 repository-code: "https://github.com/lunarfairy/scaffolding-cooperation-reward-design"
 license: "MIT"
 keywords:
