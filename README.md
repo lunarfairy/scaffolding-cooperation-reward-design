@@ -1,6 +1,7 @@
 # Scaffolding cooperation: reward design
 
 [![Release](https://img.shields.io/badge/release-v1.0.1-blue)](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23277076.svg)](https://doi.org/10.5281/zenodo.23277076)
 
 Core experiment code for **Reward choice shapes how AI social planners treat free-riders in simulated cooperation networks**.
 
@@ -114,9 +115,9 @@ Version v1.0.1 adopts marginal.py and coefprop.py from the updated authors' revi
 
 The latest core-code version is the fixed [v1.0.1 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1). Cite this version as:
 
-Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.1) [Software]. GitHub. https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1
+Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23277076
 
-The earlier [v1.0.0 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.0) remains archived on [Zenodo](https://doi.org/10.5281/zenodo.23197614). That DOI identifies v1.0.0; a Zenodo archive for v1.0.1 is pending. Generated results and trained weights remain in the separate submission package.
+The earlier [v1.0.0 release](https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.0) remains archived on [Zenodo](https://doi.org/10.5281/zenodo.23197614). That DOI identifies v1.0.0. Version v1.0.1 is archived at [10.5281/zenodo.23277076](https://doi.org/10.5281/zenodo.23277076). Generated results and trained weights remain in the separate submission package.
 
 Machine-readable citation metadata is in CITATION.cff. The accompanying manuscript has no publication DOI yet. The underlying game is described by [McKee et al., Nature Human Behaviour (2023)](https://doi.org/10.1038/s41562-023-01686-7). Questions can be raised through GitHub issues.
 

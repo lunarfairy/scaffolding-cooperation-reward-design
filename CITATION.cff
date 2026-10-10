@@ -11,7 +11,8 @@ authors:
     affiliation: "School of Economics and Management, Zhejiang Sci-Tech University"
 version: "v1.0.1"
 date-released: "2026-10-09"
-url: "https://github.com/lunarfairy/scaffolding-cooperation-reward-design/releases/tag/v1.0.1"
+doi: "10.5281/zenodo.23277076"
+url: "https://zenodo.org/records/23277076"
 repository-code: "https://github.com/lunarfairy/scaffolding-cooperation-reward-design"
 license: "MIT"
 keywords:
