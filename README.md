@@ -17,10 +17,9 @@ The repository provides the cooperative-network simulator, reward functions, ES 
 | `code/marginal.py`, `code/coefprop.py`, `code/propensity.py` | Tie values, coefficient uncertainty and reference scales |
 | `code/sim_numpy.py`, `code/calib.py`, `code/refcheck.py` | Independent simulator and calibration checks |
 | `code/manuscript_stats.py` | Manuscript summary statistics |
+| `code/make_figures.py`, `code/figs_rev.py`, `code/figstyle.py` | Figure generation and styling |
 | `inputs/deltas.json` | Reference shifts and scales used by training configurations |
 | [data/](data/README.md) | Source tables, evaluations, trained planners and human group outcomes |
-
-Figure-layout scripts are supplied in the accompanying Supplementary Software.
 
 ## Setup
 
@@ -47,6 +46,12 @@ Evaluate the trained planners:
 
     python eval_all.py launch 1 0 ../outputs/evals ../data/runs_es ../data/runs_gnn
     python paired.py ../outputs/evals ../outputs/paired.csv
+
+## Generate the figures
+
+    python make_figures.py ../data ../data/human_group_data ../outputs/figures
+
+Outputs: five main figures and four Extended Data figures in PDF and PNG, plus summary statistics.
 
 ## Small training example
 

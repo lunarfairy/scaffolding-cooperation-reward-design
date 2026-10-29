@@ -1,6 +1,6 @@
 # Source data and trained planners
 
-Source records for the figures and tables listed in [figure_data_map.csv](figure_data_map.csv). Figure-layout functions are in the accompanying Supplementary Software.
+Source records for the figures and tables listed in [figure_data_map.csv](figure_data_map.csv). Plotting entry point: [`make_figures.py`](../code/make_figures.py).
 
 ## Files
 
