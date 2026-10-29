@@ -87,8 +87,6 @@ Additional analyses:
 
 `code/make_configs.py` regenerates revision configuration lists in its working directory. For thresholds, uncertainty fields and data provenance, see the [data README](data/README.md).
 
-## Citation and licence
-
-Software citation: [v1.0.1 DOI](https://doi.org/10.5281/zenodo.23277076) ([CITATION.cff](CITATION.cff)). Cite the Git commit for data, which are not included in the DOI archive.
+## Licence
 
 Code: [MIT](LICENSE). Human group data: [CC BY 4.0, source and attribution](data/human_group_data/README.md).
