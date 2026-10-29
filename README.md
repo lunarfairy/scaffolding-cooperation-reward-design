@@ -24,7 +24,7 @@ Figure-layout scripts are supplied in the accompanying Supplementary Software.
 
 ## Setup
 
-Original experiment environment: Python 3.11, PyTorch 2.0.1, CUDA 11.8 and NumPy 1.26 on NVIDIA H20 GPUs.
+Environment: Python 3.11, PyTorch 2.0.1, CUDA 11.8 and NumPy 1.26.
 
     python -m venv .venv
 
@@ -32,7 +32,7 @@ Activate with `.\.venv\Scripts\Activate.ps1` on Windows or `source .venv/bin/act
 
     python -m pip install -r requirements.txt
 
-For GPU training, install a PyTorch build compatible with your CUDA environment. On MKL-based Windows installations, `MKL_THREADING_LAYER=SEQUENTIAL` resolves the NumPy/PyTorch OpenMP conflict encountered in local checks.
+Use a CUDA-compatible PyTorch build for GPU training. For MKL-based Windows environments, set `MKL_THREADING_LAYER=SEQUENTIAL`.
 
 All commands below run from `code/`.
 
@@ -43,14 +43,14 @@ All commands below run from `code/`.
 
 Outputs: `numbers_rev.json` (planner summaries, transfer, regret and compatibility), `calibration_mae.csv` (human-comparison errors) and `best_found_k0.5.csv` (optimization comparisons).
 
-To evaluate the deposited trained planners (GPU recommended):
+Evaluate the trained planners:
 
     python eval_all.py launch 1 0 ../outputs/evals ../data/runs_es ../data/runs_gnn
     python paired.py ../outputs/evals ../outputs/paired.csv
 
 ## Small training example
 
-This reduced configuration checks execution. Run from `code/` using PowerShell 7:
+PowerShell 7:
 
     $cfg = @{name="demo_es"; policy="table"; obj="coop_mean"; kappa=1.0; seed=0; iters=2; npair=2; games=2; eval_games=16} | ConvertTo-Json -Compress
     python run_one.py $cfg ../outputs/demo
@@ -63,7 +63,7 @@ Outputs are per-run JSON records and PyTorch state dictionaries.
 
 ## Re-run the experiments
 
-Full training requires substantial GPU computation. The four configuration files specify the model, reward, optimizer and seed settings:
+The four configuration files specify the model, reward, optimizer and seeds:
 
     python grid.py configs/configs_es.json 1 0 ../inputs/deltas.json ../outputs/runs_es
     python grid.py configs/configs_es2.json 1 0 ../inputs/deltas.json ../outputs/runs_es
@@ -74,7 +74,7 @@ Full training requires substantial GPU computation. The four configuration files
 
 The `1 0` arguments set one worker on GPU 0. Evaluation uses reporting set A (seed 12345) and independent selection set B (24680): 20,000 games for own-condition evaluations and 10,000 for frozen-policy transfer. Paired comparisons use the same evaluation batch size (4,000) across planners. `eval_all.py` generates the per-game arrays needed by `paired.py`.
 
-`RDP_N_OWN` and `RDP_N_CROSS` can reduce evaluation sizes for execution checks; use their defaults for manuscript experiments. Training results can vary with hardware and software.
+Evaluation sizes can be set with `RDP_N_OWN` and `RDP_N_CROSS`; their defaults are the values above.
 
 Additional analyses:
 
@@ -85,7 +85,7 @@ Additional analyses:
     python refcheck.py ../outputs/refcheck.json 8000
     python manuscript_stats.py ../outputs ../data/human_group_data ../outputs/statistics
 
-`code/make_configs.py` regenerates revision configuration lists in its working directory. For thresholds, uncertainty fields and data provenance, see the [data README](data/README.md).
+`code/make_configs.py` regenerates revision configuration lists in its working directory. Field definitions and statistical settings: [data README](data/README.md).
 
 ## Licence
 
