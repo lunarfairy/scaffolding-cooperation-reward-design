@@ -89,8 +89,6 @@ Additional analyses:
 
 ## Citation and licence
 
-Lu, J. & Tu, C. (2026). *Scaffolding cooperation: reward design - core experiment and analysis code* (v1.0.1) [Software]. Zenodo. https://doi.org/10.5281/zenodo.23277076
+Software citation: [v1.0.1 DOI](https://doi.org/10.5281/zenodo.23277076) ([CITATION.cff](CITATION.cff)). Cite the Git commit for data, which are not included in the DOI archive.
 
-The fixed v1.0.0 and v1.0.1 archives contain code only. Supporting data were added on 29 October 2026; identify the data version by its Git commit. Machine-readable software citation metadata is in [CITATION.cff](CITATION.cff).
-
-Code: [MIT](LICENSE). Human group data: [McKee et al. (2023)](https://doi.org/10.1038/s41562-023-01686-7), available from [OSF](https://osf.io/8ahkg/) under CC BY 4.0; see [attribution and licence](data/human_group_data/README.md). Questions: GitHub issues.
+Code: [MIT](LICENSE). Human group data: [CC BY 4.0, source and attribution](data/human_group_data/README.md).
