@@ -1,0 +1,922 @@
+[
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "static",
+"coop_final": 0.4269375,
+"coop_final_se": 0.0019646754894584017,
+"coop_all": 0.48195472757021585,
+"cap": 2.5999633073806763,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "neutral",
+"coop_final": 0.3356953125,
+"coop_final_se": 0.0024749437062569343,
+"coop_all": 0.41190680861473083,
+"cap": 4.6127609121501445,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "encouragement",
+"coop_final": 0.604359375,
+"coop_final_se": 0.0018409409928535373,
+"coop_all": 0.5825010895729065,
+"cap": 5.80527895963192,
+"iso_final": 0.0096484375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "random",
+"coop_final": 0.432703125,
+"coop_final_se": 0.0023027366639739224,
+"coop_all": 0.48888389468193055,
+"cap": 4.256072655841709,
+"iso_final": 0.0003125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "maxconn",
+"coop_final": 0.1537734375,
+"coop_final_se": 0.0023572892688393317,
+"coop_all": 0.32859585086504617,
+"cap": 4.227113645389676,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.25
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.4801875,
+"coop_all": 0.5135645833333333,
+"cap": 3.2218343750000003,
+"coop_final_se": 0.003969736835972253,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "static",
+"coop_final": 0.44863281250000003,
+"coop_final_se": 0.002004319665260833,
+"coop_all": 0.4987047215302785,
+"cap": 2.6612015950530767,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "neutral",
+"coop_final": 0.3801875,
+"coop_final_se": 0.002696679694263472,
+"coop_all": 0.44614379008611044,
+"cap": 4.9753949174880985,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "encouragement",
+"coop_final": 0.6406328125,
+"coop_final_se": 0.0018278803011782963,
+"coop_all": 0.6181864976882935,
+"cap": 6.2477461681216955,
+"iso_final": 0.00690625,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "random",
+"coop_final": 0.47402343750000003,
+"coop_final_se": 0.002395659536446805,
+"coop_all": 0.5188870171705882,
+"cap": 4.526383209943772,
+"iso_final": 0.0002109375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "maxconn",
+"coop_final": 0.193296875,
+"coop_final_se": 0.0027721819161044057,
+"coop_all": 0.3623646060625712,
+"cap": 4.603051957994699,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.375
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.50365625,
+"coop_all": 0.5313604166666667,
+"cap": 3.3433140625,
+"coop_final_se": 0.003991954249546048,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "static",
+"coop_final": 0.4712265625,
+"coop_final_se": 0.0020309477894294506,
+"coop_all": 0.5169823368390402,
+"cap": 2.7280711285322905,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "neutral",
+"coop_final": 0.4351953125,
+"coop_final_se": 0.002897134894487876,
+"coop_all": 0.48971201181411744,
+"cap": 5.441697294130922,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "encouragement",
+"coop_final": 0.6774140625,
+"coop_final_se": 0.0018005957535307492,
+"coop_all": 0.656044848759969,
+"cap": 6.730143846258521,
+"iso_final": 0.0045859375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "random",
+"coop_final": 0.517765625,
+"coop_final_se": 0.002453870650676947,
+"coop_all": 0.5519724249839782,
+"cap": 4.832550798803568,
+"iso_final": 0.0001953125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "maxconn",
+"coop_final": 0.2508046875,
+"coop_final_se": 0.0032482086600497313,
+"coop_all": 0.4077969034512838,
+"cap": 5.109410583361983,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.52546875,
+"coop_all": 0.5513791666666666,
+"cap": 3.4618375,
+"coop_final_se": 0.004109213102799458,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "static",
+"coop_final": 0.4960703125,
+"coop_final_se": 0.002050301031913479,
+"coop_all": 0.5363203525543213,
+"cap": 2.798800039380789,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "neutral",
+"coop_final": 0.497109375,
+"coop_final_se": 0.0030534782462793533,
+"coop_all": 0.5404417157173157,
+"cap": 5.993006707593799,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "encouragement",
+"coop_final": 0.7132421875,
+"coop_final_se": 0.001735290420012837,
+"coop_all": 0.6945635914802551,
+"cap": 7.234632155224681,
+"iso_final": 0.0030078125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "random",
+"coop_final": 0.56590625,
+"coop_final_se": 0.002488829093260849,
+"coop_all": 0.5873401323954265,
+"cap": 5.164075413256883,
+"iso_final": 0.0001875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "maxconn",
+"coop_final": 0.328984375,
+"coop_final_se": 0.003707734159808035,
+"coop_all": 0.4673260788122813,
+"cap": 5.773680541276932,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.625
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.553875,
+"coop_all": 0.5707791666666667,
+"cap": 3.5841656250000002,
+"coop_final_se": 0.004192151334637145,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "static",
+"coop_final": 0.5213515625,
+"coop_final_se": 0.0020464264121762064,
+"coop_all": 0.5562849362691243,
+"cap": 2.871943795710802,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "neutral",
+"coop_final": 0.56753125,
+"coop_final_se": 0.003097967192352963,
+"coop_all": 0.5976578434308369,
+"cap": 6.620178608521819,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "encouragement",
+"coop_final": 0.746578125,
+"coop_final_se": 0.001664111849352062,
+"coop_all": 0.7321490168571472,
+"cap": 7.737975930199028,
+"iso_final": 0.002046875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "random",
+"coop_final": 0.6158046875000001,
+"coop_final_se": 0.0024624902424926405,
+"coop_all": 0.6250109871228536,
+"cap": 5.525241044640541,
+"iso_final": 0.0001171875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "maxconn",
+"coop_final": 0.4271875,
+"coop_final_se": 0.004019554324225749,
+"coop_all": 0.538438598314921,
+"cap": 6.567600515559316,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.57596875,
+"coop_all": 0.5896854166666666,
+"cap": 3.697509375,
+"coop_final_se": 0.004262403717295999,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "static",
+"coop_final": 0.54609375,
+"coop_final_se": 0.0020345710179041554,
+"coop_all": 0.5765963951746623,
+"cap": 2.9463574734777214,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "neutral",
+"coop_final": 0.6381875,
+"coop_final_se": 0.002990709797676463,
+"coop_all": 0.6571995218594869,
+"cap": 7.281168880790472,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "encouragement",
+"coop_final": 0.7779921875,
+"coop_final_se": 0.0015630324734001748,
+"coop_all": 0.7664870540301005,
+"cap": 8.205060325026512,
+"iso_final": 0.0013593750000000001,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "random",
+"coop_final": 0.6638671875000001,
+"coop_final_se": 0.002376910498896351,
+"coop_all": 0.6619021415710449,
+"cap": 5.8836449538767335,
+"iso_final": 3.90625e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "maxconn",
+"coop_final": 0.53240625,
+"coop_final_se": 0.0040585993678125265,
+"coop_all": 0.6136812885602315,
+"cap": 7.408011103883386,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.875
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.59484375,
+"coop_all": 0.6074354166666667,
+"cap": 3.8111578125000007,
+"coop_final_se": 0.0042561292544363305,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "static",
+"coop_final": 0.571125,
+"coop_final_se": 0.0020090419727804465,
+"coop_all": 0.596905259291331,
+"cap": 3.0203457565754652,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "neutral",
+"coop_final": 0.7023984375,
+"coop_final_se": 0.0027669719821552816,
+"coop_all": 0.712571402390798,
+"cap": 7.900497813165188,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "encouragement",
+"coop_final": 0.8049765625,
+"coop_final_se": 0.001463034561047705,
+"coop_all": 0.7962917248408,
+"cap": 8.615663084924222,
+"iso_final": 0.0007734375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "random",
+"coop_final": 0.7076796875,
+"coop_final_se": 0.0022623021910726272,
+"coop_all": 0.6965354601542155,
+"cap": 6.225007458657027,
+"iso_final": 4.6875e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "maxconn",
+"coop_final": 0.639046875,
+"coop_final_se": 0.003815378271737791,
+"coop_all": 0.6897360006968181,
+"cap": 8.25750488370657,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.62990625,
+"coop_all": 0.6340625,
+"cap": 3.9767468750000003,
+"coop_final_se": 0.004085114400842252,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.5,
+"delta": 2.089158098845748
+},
+"planner": "static",
+"coop_final": 0.66890625,
+"coop_final_se": 0.0015440479335968955,
+"coop_all": 0.6745292027791341,
+"cap": 3.2763902997076513,
+"iso_final": 0.0047109375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"delta": 2.089158098845748
+},
+"planner": "neutral",
+"coop_final": 0.731703125,
+"coop_final_se": 0.001939012758571107,
+"coop_all": 0.7240563074747721,
+"cap": 7.97155173753202,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"delta": 2.089158098845748
+},
+"planner": "encouragement",
+"coop_final": 0.8143984375000001,
+"coop_final_se": 0.0013276936116643709,
+"coop_all": 0.7941188057263692,
+"cap": 8.557166981458664,
+"iso_final": 0.0003125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"delta": 2.089158098845748
+},
+"planner": "random",
+"coop_final": 0.7398046875000001,
+"coop_final_se": 0.0017082080448712147,
+"coop_all": 0.7302047451337178,
+"cap": 6.512173086822033,
+"iso_final": 3.125e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"delta": 2.089158098845748
+},
+"planner": "maxconn",
+"coop_final": 0.649828125,
+"coop_final_se": 0.0028553189783050567,
+"coop_all": 0.6841813007990519,
+"cap": 8.193756885319948,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75,
+"delta": 1.0474617706127143
+},
+"planner": "static",
+"coop_final": 0.628875,
+"coop_final_se": 0.0017370022889468153,
+"coop_all": 0.6412474433581035,
+"cap": 3.1671414687335493,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75,
+"delta": 1.0474617706127143
+},
+"planner": "neutral",
+"coop_final": 0.7223515625,
+"coop_final_se": 0.002271248404082313,
+"coop_all": 0.7208432833353678,
+"cap": 7.958647051945329,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75,
+"delta": 1.0474617706127143
+},
+"planner": "encouragement",
+"coop_final": 0.8103828125,
+"coop_final_se": 0.0013862236207709522,
+"coop_all": 0.7954349478085836,
+"cap": 8.588201757445932,
+"iso_final": 0.0005,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75,
+"delta": 1.0474617706127143
+},
+"planner": "random",
+"coop_final": 0.7286875,
+"coop_final_se": 0.0019167117493307396,
+"coop_all": 0.7170156836509705,
+"cap": 6.399694182157517,
+"iso_final": 3.125e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.75,
+"delta": 1.0474617706127143
+},
+"planner": "maxconn",
+"coop_final": 0.6423828125000001,
+"coop_final_se": 0.003388515392513459,
+"coop_all": 0.6868151466051737,
+"cap": 8.223920923665165,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -2.209195228894507
+},
+"planner": "static",
+"coop_final": 0.2832578125,
+"coop_final_se": 0.002222650913845606,
+"coop_all": 0.3903765837351481,
+"cap": 2.3027722488641738,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -2.209195228894507
+},
+"planner": "neutral",
+"coop_final": 0.3128984375,
+"coop_final_se": 0.003572242103925377,
+"coop_all": 0.43158648411432904,
+"cap": 4.968317201033234,
+"iso_final": 2.34375e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -2.209195228894507
+},
+"planner": "encouragement",
+"coop_final": 0.6081875,
+"coop_final_se": 0.0023007507822967333,
+"coop_all": 0.6181365092595418,
+"cap": 6.3870821095108985,
+"iso_final": 0.024554687500000002,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -2.209195228894507
+},
+"planner": "random",
+"coop_final": 0.3613046875,
+"coop_final_se": 0.003185255534285986,
+"coop_all": 0.450754717985789,
+"cap": 4.070385526686907,
+"iso_final": 0.001296875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -2.209195228894507
+},
+"planner": "maxconn",
+"coop_final": 0.2266953125,
+"coop_final_se": 0.003752599634558266,
+"coop_all": 0.3955974211295446,
+"cap": 4.974803202718497,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -1.0864146143435711
+},
+"planner": "static",
+"coop_final": 0.4330390625,
+"coop_final_se": 0.002316603672282052,
+"coop_all": 0.4937729557355245,
+"cap": 2.661578930094838,
+"iso_final": 0.00471875,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -1.0864146143435711
+},
+"planner": "neutral",
+"coop_final": 0.514234375,
+"coop_final_se": 0.0036577891438131717,
+"coop_all": 0.5735786954561869,
+"cap": 6.424464528858662,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -1.0864146143435711
+},
+"planner": "encouragement",
+"coop_final": 0.728453125,
+"coop_final_se": 0.0018461676378101906,
+"coop_all": 0.725085465113322,
+"cap": 7.679476315423846,
+"iso_final": 0.004328125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -1.0864146143435711
+},
+"planner": "random",
+"coop_final": 0.55753125,
+"coop_final_se": 0.0029968024008008715,
+"coop_all": 0.5826396187146504,
+"cap": 5.1845800909549,
+"iso_final": 0.000390625,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"delta": -1.0864146143435711
+},
+"planner": "maxconn",
+"coop_final": 0.4198203125,
+"coop_final_se": 0.004362452915957895,
+"coop_all": 0.5367161929607391,
+"cap": 6.549488023355603,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "static",
+"coop_final": 0.4425234375,
+"coop_final_se": 0.002145989378901022,
+"coop_all": 0.4949323336283366,
+"cap": 2.660498081177473,
+"iso_final": 0.00478125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "neutral",
+"coop_final": 0.4814765625,
+"coop_final_se": 0.003169168952605789,
+"coop_all": 0.5443432768185933,
+"cap": 6.013031699344516,
+"iso_final": 7.8125e-06,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "encouragement",
+"coop_final": 0.763703125,
+"coop_final_se": 0.0018425643126828962,
+"coop_all": 0.7219151536623637,
+"cap": 7.498900508388877,
+"iso_final": 0.0022265625000000002,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "random",
+"coop_final": 0.53321875,
+"coop_final_se": 0.0027275282350442877,
+"coop_all": 0.5705557624499004,
+"cap": 4.938864471331239,
+"iso_final": 0.000234375,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "maxconn",
+"coop_final": 0.3456875,
+"coop_final_se": 0.0037821829334888134,
+"coop_all": 0.4893849233786265,
+"cap": 6.012666896343231,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 1.0,
+"w_imit": 0.3
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.4975625,
+"coop_all": 0.53489375,
+"cap": 3.3422421875000006,
+"coop_final_se": 0.004825161711992148,
+"n": 2000
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "static",
+"coop_final": 0.358953125,
+"coop_final_se": 0.0019161843352298127,
+"coop_all": 0.42817608316739403,
+"cap": 2.4181156390458347,
+"iso_final": 0.00478125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "neutral",
+"coop_final": 0.2712109375,
+"coop_final_se": 0.002165897860520646,
+"coop_all": 0.36489794254302976,
+"cap": 4.098863629207015,
+"iso_final": 1.5625e-05,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "encouragement",
+"coop_final": 0.6464140625,
+"coop_final_se": 0.0021179088262745314,
+"coop_all": 0.5863276461760203,
+"cap": 5.70421684962511,
+"iso_final": 0.0085703125,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "random",
+"coop_final": 0.3640078125,
+"coop_final_se": 0.0022512464451879713,
+"coop_all": 0.4422969082991282,
+"cap": 3.7800753736048938,
+"iso_final": 0.0005,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "maxconn",
+"coop_final": 0.113234375,
+"coop_final_se": 0.0018271787901944184,
+"coop_all": 0.29097501933574677,
+"cap": 3.799739807009697,
+"iso_final": 0.0,
+"impl": "torch"
+},
+{
+"cond": {
+"kappa": 0.5,
+"w_imit": 0.3
+},
+"planner": "clustering",
+"impl": "numpy",
+"coop_final": 0.40721875,
+"coop_all": 0.4661895833333334,
+"cap": 2.953796875,
+"coop_final_se": 0.0043498742236665585,
+"n": 2000
+}
+]

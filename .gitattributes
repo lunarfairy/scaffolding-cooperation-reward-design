@@ -1,0 +1,2 @@
+# Preserve deposited data bytes, including original line endings.
+data/** -text

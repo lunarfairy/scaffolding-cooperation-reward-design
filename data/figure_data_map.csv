@@ -1,0 +1,17 @@
+﻿display_item,panels,data_files,processing_reference
+Fig. 1,a,evals/; evaluation_scalars.csv,figs_rev.py: fig1 (opportunity-weighted schedule rates)
+Fig. 1,b,coef_draws.csv,figs_rev.py: fig1 (curve field and coefficient-draw break-even values)
+Fig. 1,c,marg_summary.csv,figs_rev.py: fig1 (degree/neighbourhood Shapley contributions)
+Fig. 1,d,calib.json; human_group_data/,make_figures.py (five-condition MAE); figs_rev.py: fig1
+Fig. 2,a-d,evals/,figs_rev.py: fig2 (recommendation rates by round)
+Fig. 3,a-d,evals/; evaluation_scalars.csv,figs_rev.py: fig3 (seed means and uncertainty)
+Fig. 4,a-d,evals/; evaluation_scalars.csv,"figs_rev.py: fig4 (transfer, propensity, imitation and accounting)"
+Fig. 5,a-d,paired.csv; evals/,figs_rev.py: fig5 (regret and constrained schedule outcomes)
+Extended Data Fig. 1,a-h,evals/,figs_rev.py: ed_sched
+Extended Data Fig. 2,a-c,training_logs.jsonl,figs_rev.py: ed_optim (training and clipping records)
+Extended Data Fig. 2,d,evals/; numbers_rev.json,make_figures.py: BEST; figs_rev.py: ed_optim
+Extended Data Fig. 3,a-d,marg_summary.csv; coef_draws.csv,figs_rev.py: ed_tie
+Extended Data Fig. 4,a-f,calib.json; human_group_data/,figs_rev.py: ed_calib
+Extended Data Tables 1-3,all,evals/; numbers_rev.json,analysis2.py and stats_rev.py; current manuscript tables
+Extended Data Table 4,all,calib.json; refcheck.json; human_group_data/,Existing calibration and independent simulator records
+Table 1,all,analytic definitions,Manuscript reward definitions and rdp.py; no measured source dataset
